@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProductsAPI.Context;
+using ProductsAPI.Data;
 using ProductsAPI.Models.Entity;
 using ProductsAPI.Models.Dto;
 
