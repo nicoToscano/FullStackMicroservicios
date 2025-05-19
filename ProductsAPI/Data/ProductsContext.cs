@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductsAPI.Models.Entity;
-namespace ProductsAPI.Context
+namespace ProductsAPI.Data
 {
     public class ProductsContext : DbContext
     {
