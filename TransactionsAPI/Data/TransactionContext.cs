@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TransactionsAPI.Models;
+using TransactionsAPI.Models.Entity;
 
 namespace TransactionsAPI.Data
 {

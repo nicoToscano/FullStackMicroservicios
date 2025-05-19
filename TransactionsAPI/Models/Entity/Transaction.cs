@@ -1,4 +1,4 @@
-﻿namespace TransactionsAPI.Models
+﻿namespace TransactionsAPI.Models.Entity
 {
     public class Transaction
     {
