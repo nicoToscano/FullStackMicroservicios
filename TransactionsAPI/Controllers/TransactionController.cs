@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TransactionsAPI.Data;
+using TransactionsAPI.Models.Dto;
+using TransactionsAPI.Models.Entity;
 
 namespace TransactionsAPI.Controllers
 {
@@ -21,6 +23,26 @@ namespace TransactionsAPI.Controllers
             var allProducts = dbContext.Transactions.ToList();
 
             return Ok(allProducts);
+        }
+
+        [HttpPost]
+        public IActionResult AddTransaction(AddTransactionDTO addTransactionDto)
+        {
+            var transactionEntity = new Transaction()
+            {
+                DateOnly = addTransactionDto.DateOnly,
+                TipoDeTransaccion = addTransactionDto.TipoDeTransaccion,
+                ProductoId = addTransactionDto.ProductoId,
+                Cantidad = addTransactionDto.Cantidad,
+                PrecioUnitario = addTransactionDto.PrecioUnitario,
+                PrecioTotal = addTransactionDto.PrecioTotal,
+                Detalle = addTransactionDto.Detalle,
+            };
+
+            dbContext.Transactions.Add(transactionEntity);
+            dbContext.SaveChanges();
+
+            return Ok(transactionEntity);
         }
 
 
