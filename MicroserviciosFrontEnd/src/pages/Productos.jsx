@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export function Productos() {
   const [productos, setProductos] = useState([]);
@@ -22,6 +23,56 @@ export function Productos() {
     getProductos();
   }, []);
 
+  const eliminarProducto = async (id) => {
+    try {
+      const response = await fetch(
+        `https://localhost:7081/api/products/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.status === 200) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "success",
+          title: "Eliminación exitosa",
+          text: "El producto ha sido eliminado exitosamente.",
+        });
+        getProductos();
+      } else {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 4000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo eliminar el producto.",
+        });
+      }
+    } catch (error) {
+      console.error("Error en la petición:", error);
+    }
+  };
+
   return (
     <>
       <h1>Productos</h1>
@@ -33,20 +84,26 @@ export function Productos() {
               <ul>
                 <li className="nombre">{producto?.nombre}</li>
                 <li className="descripcion">{producto?.descripcion}</li>
-                <li className="imagen"><img src={producto?.imagen} alt="" /></li>
-                <li className="categoria">{producto?.categoria}</li>
-                <li className="precio">{producto?.precio}</li>
-                <li className="stock">{producto?.stock}</li>
+                <li className="imagen">
+                  <img src={producto?.imagen} alt="" />
+                </li>
+                <li className="categoria"><strong>Tipo: </strong>{producto?.categoria}</li>
+                <li className="precio">${producto?.precio}</li>
+                <li className="stock">Disponle: {producto?.stock}</li>
               </ul>
 
-              <Link to={`/edicionproductos/${producto?.id}`}>
-                <button className="btn btn-primary">Editar</button>
-              </Link>
+              <div className="contenedorBtn">
+                <Link to={`/edicionproductos/${producto?.id}`}>
+                  <button className="btn">Editar</button>
+                </Link>
 
-              <Link to={`/eliminarproductos/${producto?.id}`}>
-                <button className="btn btn-danger">Eliminar</button>
-              </Link>
-              
+                <button
+                  className="btn"
+                  onClick={() => eliminarProducto(producto?.id)}
+                >
+                  Eliminar
+                </button>
+              </div>
             </div>
           );
         })}
