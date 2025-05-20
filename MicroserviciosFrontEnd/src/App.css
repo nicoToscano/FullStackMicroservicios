@@ -77,6 +77,17 @@
   margin-bottom: 2em;
 }
 
+.containerListaTransacciones{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+
+  margin-bottom: 2em;
+}
+
 .contenedorBtn {
   display: flex;
   justify-content: center;
@@ -108,6 +119,19 @@
 
 .listaProductos ul li.imagen img {
   height: 100px;
+}
+
+.listaTransacciones{
+  width: 500px;
+  padding: 1em;
+  background-color: #f9fafb;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+}
+
+.listaTransacciones ul {
+  list-style: none;
+  padding: 0;
 }
 
 .formularioEdicion {
