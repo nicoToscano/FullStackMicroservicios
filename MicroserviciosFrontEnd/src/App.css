@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -16,6 +14,51 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo.net:hover {
+  filter: drop-shadow(0 0 2em #664bb3aa);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+}
+
+.btnProductos{
+  background-color: #ffffff;
+  color: black;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btnProductos:hover {
+  background-color: #d6ff64;
+  color: black;
+}
+
+.btnTransacciones{
+  background-color: #ffffff;
+  color: black;
+  border-radius: 8px;
+  padding: 0.5em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btnTransacciones:hover {
+  background-color: #64d6ff;
+  color: black;
+}
+
+.listaProductos{
+  display: flex;
 }
 
 @keyframes logo-spin {
