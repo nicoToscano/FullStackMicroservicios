@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
-export function EditarProducto({ idProducto }) {
+export function EditarProducto() {
   const router = useNavigate();
   const [nombre, setNombre] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
@@ -40,16 +39,6 @@ export function EditarProducto({ idProducto }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log({
-      nombre,
-      descripcion,
-      categoria,
-      imagen,
-      precio,
-      stock,
-    });
-
     try {
       const res = await fetch(
         `https://localhost:7081/api/products/${idProducto}`,
@@ -87,9 +76,6 @@ export function EditarProducto({ idProducto }) {
 
         router("/productos");
       }
-
-      
-
     } catch (error) {
       const Toast = Swal.mixin({
         toast: true,
@@ -148,7 +134,7 @@ export function EditarProducto({ idProducto }) {
 
         <div className="inputLabel">
           <label>Imagen:</label>
-          <img src={imagen} alt=""/>
+          <img src={imagen} alt="" />
           <input
             type="text"
             id="imagen"
@@ -180,7 +166,7 @@ export function EditarProducto({ idProducto }) {
           />
         </div>
 
-        <button type="submit">Actualizar Producto</button>
+        <button type="submit">Actualizar producto</button>
       </form>
     </>
   );
