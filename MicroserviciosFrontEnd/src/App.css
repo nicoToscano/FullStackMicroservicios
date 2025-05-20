@@ -57,9 +57,84 @@
   color: black;
 }
 
-.listaProductos{
+.containerListaProductos{
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
 }
+
+.listaProductos{
+  width: 500px;
+  padding: 1em;
+  background-color: #f9fafb;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+}
+
+.listaProductos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.listaProductos ul li.nombre{
+  font-size: 1.5em;
+  font-weight: 600;
+  color: black;
+}
+
+.listaProductos ul li.imagen img {
+  height: 100px;
+}
+
+.formularioEdicion {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  gap: 1.2em;
+  background-color: #f9fafb;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+  padding: 2em 2.5em;
+  transition: box-shadow 0.3s;
+}
+
+.formularioEdicion:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
+}
+
+.inputLabel{
+  display: flex;
+  flex-direction: column;
+}
+
+.formularioEdicion label {
+  align-items: center;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 0.3em;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.formularioEdicion input {
+  color: #222;
+  background: #fff;
+  border-radius: 8px;
+  border: 1.5px solid #bfc9d1;
+  font-size: 1em;
+  padding: 1.2em;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.formularioEdicion input:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 0 2px #e3f2fd;
+}
+
 
 @keyframes logo-spin {
   from {
