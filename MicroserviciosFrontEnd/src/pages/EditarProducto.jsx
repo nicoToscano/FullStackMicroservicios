@@ -148,6 +148,7 @@ export function EditarProducto({ idProducto }) {
 
         <div className="inputLabel">
           <label>Imagen:</label>
+          <img src={imagen} alt=""/>
           <input
             type="text"
             id="imagen"
