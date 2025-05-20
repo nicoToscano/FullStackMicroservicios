@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProductsAPI.Data;
 using ProductsAPI.Models.Entity;
 using ProductsAPI.Models.Dto;
+using Microsoft.AspNetCore.Cors;
 
 namespace ProductsAPI.Controllers
 {
@@ -57,6 +58,7 @@ namespace ProductsAPI.Controllers
             return Ok(productEntity);
         }
 
+        [EnableCors("_myAllowSpecificOrigins")]
         [HttpPut("{id}")]
         public IActionResult UpdateProduct(int id, UpdateProductDTO updateProductDTO)
         {
