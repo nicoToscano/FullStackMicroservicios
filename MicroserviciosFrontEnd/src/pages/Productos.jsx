@@ -42,6 +42,11 @@ export function Productos() {
               <Link to={`/edicionproductos/${producto?.id}`}>
                 <button className="btn btn-primary">Editar</button>
               </Link>
+
+              <Link to={`/eliminarproductos/${producto?.id}`}>
+                <button className="btn btn-danger">Eliminar</button>
+              </Link>
+              
             </div>
           );
         })}
