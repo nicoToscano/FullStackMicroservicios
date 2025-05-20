@@ -73,6 +73,18 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
+
+  margin-bottom: 2em;
+}
+
+.contenedorBtn {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+
+  button {
+    width: 180px;
+  }
 }
 
 .listaProductos{
@@ -117,6 +129,11 @@
 .inputLabel{
   display: flex;
   flex-direction: column;
+  img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
 }
 
 .formularioEdicion label {
