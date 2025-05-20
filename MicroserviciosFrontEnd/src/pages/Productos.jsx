@@ -26,20 +26,30 @@ export function Productos() {
     <>
       <h1>Productos</h1>
 
-      {productos?.map((producto) => {
-        return (
-          <div className="listaProductos" key={producto?.id}>
-            <p>
-              {producto?.id} - {producto?.nombre} - {producto?.descripcion} -{" "}
-              {producto?.categoria} - {producto?.precio} - {producto?.stock}
-            </p>
+      <div className="containerListaProductos">
+        {productos?.map((producto) => {
+          return (
+            <div className="listaProductos" key={producto?.id}>
+              <ul>
+                <li className="nombre">{producto?.nombre}</li>
+                <li className="descripcion">{producto?.descripcion}</li>
+                <li className="imagen"><img src={producto?.imagen} alt="" /></li>
+                <li className="categoria">{producto?.categoria}</li>
+                <li className="precio">{producto?.precio}</li>
+                <li className="stock">{producto?.stock}</li>
+              </ul>
 
-            <Link to={`/edicionproductos/${producto?.id}`}>
-              <button className="btn btn-primary">Editar</button>
-            </Link>
-          </div>
-        );
-      })}
+              <Link to={`/edicionproductos/${producto?.id}`}>
+                <button className="btn btn-primary">Editar</button>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+
+      <Link to="/creacionproductos">
+        <button className="btn btn-primary">Crear Producto</button>
+      </Link>
     </>
   );
 }
