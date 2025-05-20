@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using TransactionsAPI.Data;
 using TransactionsAPI.Models.Dto;
 using TransactionsAPI.Models.Entity;
