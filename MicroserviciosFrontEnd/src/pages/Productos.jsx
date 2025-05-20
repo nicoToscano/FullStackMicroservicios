@@ -110,7 +110,7 @@ export function Productos() {
       </div>
 
       <Link to="/creacionproductos">
-        <button className="btn btn-primary">Crear Producto</button>
+        <button className="btn">Crear producto</button>
       </Link>
     </>
   );
