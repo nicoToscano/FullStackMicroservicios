@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-export function EdicionProductos({ idProducto }) {
+export function EditarProducto({ idProducto }) {
   const router = useNavigate();
   const [nombre, setNombre] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
