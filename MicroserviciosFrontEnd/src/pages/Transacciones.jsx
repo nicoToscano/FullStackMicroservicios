@@ -13,7 +13,6 @@ export function Transacciones() {
       if (response.status === 200) {
         setTransacciones(data);
 
-        console.log("Transacciones:", data);
       }
     } catch (error) {
       console.error("Error en la petición:", error);
@@ -57,6 +56,10 @@ export function Transacciones() {
             );
         })}
       </div>
+
+      <Link to="/creaciontransacciones">
+        <button className="btn">Crear transacción</button>
+      </Link>
     </>
   );
 }
