@@ -14,21 +14,18 @@ export function CrearProducto() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(
-        "https://localhost:7081/api/products",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            nombre,
-            descripcion,
-            categoria,
-            imagen,
-            precio,
-            stock,
-          }),
-        }
-      );
+      const res = await fetch("https://localhost:7081/api/products", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre,
+          descripcion,
+          categoria,
+          imagen,
+          precio,
+          stock,
+        }),
+      });
 
       if (res.status === 200) {
         const Toast = Swal.mixin({
@@ -71,80 +68,84 @@ export function CrearProducto() {
   };
 
   return (
-    <>
-      <h1>Creación de producto</h1>
-
-      <form className="formularioEdicion" onSubmit={handleSubmit}>
-        <div className="inputLabel">
+    <div className="crear-transaccion-container">
+      <h1 className="crear-transaccion-titulo">Crear Producto</h1>
+      <form onSubmit={handleSubmit} className="crear-transaccion-form">
+        <div className="form-group">
           <label>Nombre:</label>
           <input
             type="text"
-            id="nombre"
-            name="nombre"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
+            required
           />
         </div>
 
-        <div className="inputLabel">
+        <div className="form-group">
           <label>Descripción:</label>
           <input
             type="text"
-            id="descripcion"
-            name="descripcion"
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
+            required
           />
         </div>
 
-        <div className="inputLabel">
-          <label>Categoria:</label>
+        <div className="form-group">
+          <label>Categoría:</label>
           <input
             type="text"
-            id="categoria"
-            name="categoria"
             value={categoria}
             onChange={(e) => setCategoria(e.target.value)}
+            required
           />
         </div>
 
-        <div className="inputLabel">
-          <label>Imagen:</label>
-          <img src={imagen} alt="" />
+        <div className="form-group">
+          <label>Imagen (URL):</label>
+          {imagen && (
+            <img
+              src={imagen}
+              alt="Vista previa"
+              style={{
+                width: "100%",
+                borderRadius: "6px",
+                marginBottom: "10px",
+              }}
+            />
+          )}
           <input
             type="text"
-            id="imagen"
-            name="imagen"
             value={imagen}
             onChange={(e) => setImagen(e.target.value)}
+            required
           />
         </div>
 
-        <div className="inputLabel">
+        <div className="form-group">
           <label>Precio:</label>
           <input
             type="number"
-            id="precio"
-            name="precio"
             value={precio}
             onChange={(e) => setPrecio(e.target.value)}
+            required
           />
         </div>
 
-        <div className="inputLabel">
+        <div className="form-group">
           <label>Stock:</label>
           <input
             type="number"
-            id="stock"
-            name="stock"
             value={stock}
             onChange={(e) => setStock(e.target.value)}
+            required
           />
         </div>
 
-        <button type="submit">Crear producto</button>
+        <button type="submit" className="btn-submit">
+          Crear Producto
+        </button>
       </form>
-
-    </>
+    </div>
   );
 }
