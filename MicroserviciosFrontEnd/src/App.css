@@ -185,6 +185,75 @@
   box-shadow: 0 0 0 2px #e3f2fd;
 }
 
+.crear-transaccion-container {
+  width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.crear-transaccion-titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.crear-transaccion-form .form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.crear-transaccion-form label {
+  display: flex;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #444;
+  align-items: left;
+}
+
+.crear-transaccion-form input,
+.crear-transaccion-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+  color: black;
+}
+
+.crear-transaccion-form input:focus,
+.crear-transaccion-form textarea:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.crear-transaccion-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #357ab8;
+}
 
 @keyframes logo-spin {
   from {
