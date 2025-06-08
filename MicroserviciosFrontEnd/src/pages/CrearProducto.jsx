@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BotonVolver } from "../utils/BotonVolver";
 
 export function CrearProducto() {
   const router = useNavigate();
@@ -68,10 +69,11 @@ export function CrearProducto() {
   };
 
   return (
-    <div className="crear-transaccion-container">
-      <h1 className="crear-transaccion-titulo">Crear Producto</h1>
-      <form onSubmit={handleSubmit} className="crear-transaccion-form">
-        <div className="form-group">
+    <>
+      <BotonVolver />
+      <h1>Crear Producto</h1>
+      <form className="formularioEdicion" onSubmit={handleSubmit}>
+        <div className="inputLabel">
           <label>Nombre:</label>
           <input
             type="text"
@@ -81,7 +83,7 @@ export function CrearProducto() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="inputLabel">
           <label>Descripción:</label>
           <input
             type="text"
@@ -91,7 +93,7 @@ export function CrearProducto() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="inputLabel">
           <label>Categoría:</label>
           <input
             type="text"
@@ -101,19 +103,9 @@ export function CrearProducto() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="inputLabel imagen">
           <label>Imagen (URL):</label>
-          {imagen && (
-            <img
-              src={imagen}
-              alt="Vista previa"
-              style={{
-                width: "100%",
-                borderRadius: "6px",
-                marginBottom: "10px",
-              }}
-            />
-          )}
+          {imagen && <img src={imagen} alt="" />}
           <input
             type="text"
             value={imagen}
@@ -122,7 +114,7 @@ export function CrearProducto() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="inputLabel">
           <label>Precio:</label>
           <input
             type="number"
@@ -132,7 +124,7 @@ export function CrearProducto() {
           />
         </div>
 
-        <div className="form-group">
+        <div className="inputLabel">
           <label>Stock:</label>
           <input
             type="number"
@@ -142,10 +134,8 @@ export function CrearProducto() {
           />
         </div>
 
-        <button type="submit" className="btn-submit">
-          Crear Producto
-        </button>
+        <button type="submit">Crear Producto</button>
       </form>
-    </div>
+    </>
   );
 }
