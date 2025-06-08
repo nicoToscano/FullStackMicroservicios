@@ -70,7 +70,9 @@ export function CrearProducto() {
 
   return (
     <>
-      <BotonVolver />
+      <div className="containerBotonVolver">
+        <BotonVolver />
+      </div>
       <h1>Crear Producto</h1>
       <form className="formularioEdicion" onSubmit={handleSubmit}>
         <div className="inputLabel">

@@ -78,7 +78,9 @@ export function Productos() {
 
   return (
     <>
-      <BotonVolver />
+      <div className="containerBotonVolver">
+        <BotonVolver />
+      </div>
       <div className="containerProductos">
         <h1 className="titulo">Productos</h1>
 

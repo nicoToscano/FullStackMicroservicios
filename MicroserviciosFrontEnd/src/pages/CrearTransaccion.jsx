@@ -112,7 +112,9 @@ export function CrearTransaccion() {
 
   return (
     <>
-      <BotonVolver />
+      <div className="containerBotonVolver">
+        <BotonVolver />
+      </div>
       <h1>Crear Transacción</h1>
       <form className="formularioEdicion" onSubmit={handleSubmit}>
         <div className="inputLabel">

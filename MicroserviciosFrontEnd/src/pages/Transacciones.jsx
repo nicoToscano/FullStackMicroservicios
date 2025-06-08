@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BotonVolver } from "../utils/BotonVolver";
 
 export function Transacciones() {
   const [transacciones, setTransacciones] = useState([]);
@@ -23,6 +24,9 @@ export function Transacciones() {
 
   return (
     <>
+      <div className="containerBotonVolver">
+        <BotonVolver />
+      </div>
       <h1>Transacciones</h1>
       <div className="containerListaTransacciones">
         {transacciones?.map((transaccion) => {

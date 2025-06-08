@@ -96,10 +96,12 @@ export function EditarProducto() {
       });
     }
   };
-  
+
   return (
     <>
-      <BotonVolver />
+      <div className="containerBotonVolver">
+        <BotonVolver />
+      </div>
       <h1>Edición de producto</h1>
       <form className="formularioEdicion" onSubmit={handleSubmit}>
         <div className="inputLabel">
