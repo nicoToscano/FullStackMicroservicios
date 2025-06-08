@@ -2,28 +2,19 @@ import { NavLink } from "react-router-dom";
 
 export function Inicio() {
   return (
-    <>
-      <div className="inicio">
+    <main className="home">
+      <section className="card">
         <div className="logos">
-          <img className="logo net" src="./netcore.png" alt="Logo .NET" />
-          <img className="logo react" src="/react.svg" alt="Logo React" />
-          <img className="logo" src="/vite.svg" alt="Logo Vite" />
+          <img src="./netcore.png" alt=".NET Logo" className="logo" />
+          <img src="/react.svg" alt="React Logo" className="logo" />
+          <img src="/vite.svg" alt="Vite Logo" className="logo" />
         </div>
-        <h1>FullStack Microservicios .NET y React + Vite</h1>
-
-        <div className="container">
-          <div className="productos">
-            <NavLink to="/productos">
-              <h2 className="btnProductos">Lista de productos</h2>
-            </NavLink>
-          </div>
-          <div className="transacciones">
-            <NavLink to="/transacciones">
-              <h2 className="btnTransacciones">Lista de transacciones</h2>
-            </NavLink>
-          </div>
+        <h1>Microservicios con .NET, React & Vite</h1>
+        <div className="actions">
+          <NavLink to="/productos" className="btn">Productos</NavLink>
+          <NavLink to="/transacciones" className="btn secondary">Transacciones</NavLink>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   );
 }
