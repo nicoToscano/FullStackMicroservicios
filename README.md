@@ -15,6 +15,19 @@ Antes de ejecutar este proyecto en un entorno local, asegúrate de tener instala
 - [Visual Studio Code]
 ---
 
+## 🛠️ Base de Datos
+
+Este proyecto incluye un script SQL para crear la base de datos y sus tablas.
+
+### ▶️ Pasos para configurar la base de datos:
+
+1. Abre **SQL Server Management Studio (SSMS)**.
+2. Conéctate a tu instancia de SQL Server.
+3. Abre el archivo `SQLQueryProductosTransacciones.sql` que se encuentra en la raíz del proyecto.
+4. Ejecuta el script para crear la base de datos y las tablas necesarias.
+
+---
+
 ## 🚀 Ejecución del Backend (.NET)
 
 1. Clona el repositorio:
