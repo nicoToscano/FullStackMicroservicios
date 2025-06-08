@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BotonVolver } from "../utils/BotonVolver";
 
 export function EditarProducto() {
   const router = useNavigate();
@@ -95,8 +96,10 @@ export function EditarProducto() {
       });
     }
   };
+  
   return (
     <>
+      <BotonVolver />
       <h1>Edición de producto</h1>
       <form className="formularioEdicion" onSubmit={handleSubmit}>
         <div className="inputLabel">
@@ -132,9 +135,9 @@ export function EditarProducto() {
           />
         </div>
 
-        <div className="inputLabel">
+        <div className="inputLabel imagen">
           <label>Imagen:</label>
-          <img src={imagen} alt="" />
+          {imagen && <img src={imagen} alt="" />}
           <input
             type="text"
             id="imagen"
