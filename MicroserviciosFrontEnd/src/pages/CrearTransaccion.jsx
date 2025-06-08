@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { BotonVolver } from "../utils/BotonVolver";
 
 export function CrearTransaccion() {
   const router = useNavigate();
@@ -110,79 +111,77 @@ export function CrearTransaccion() {
   };
 
   return (
-  <div className="crear-transaccion-container">
-    <h1 className="crear-transaccion-titulo">Crear Transacción</h1>
-    <form onSubmit={handleSubmit} className="crear-transaccion-form">
-      <div className="form-group">
-        <label>Fecha:</label>
-        <input
-          type="date"
-          value={fecha}
-          onChange={(e) => setFecha(e.target.value)}
-          required
-        />
-      </div>
+    <>
+      <BotonVolver />
+      <h1>Crear Transacción</h1>
+      <form className="formularioEdicion" onSubmit={handleSubmit}>
+        <div className="inputLabel">
+          <label>Fecha:</label>
+          <input
+            type="date"
+            value={fecha}
+            onChange={(e) => setFecha(e.target.value)}
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Tipo de Transacción:</label>
-        <input
-          type="text"
-          value={tipoDeTransaccion}
-          onChange={(e) => setTipoDeTransaccion(e.target.value)}
-          required
-        />
-      </div>
+        <div className="inputLabel">
+          <label>Tipo de Transacción:</label>
+          <input
+            type="text"
+            value={tipoDeTransaccion}
+            onChange={(e) => setTipoDeTransaccion(e.target.value)}
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label>ID del Producto:</label>
-        <input
-          type="number"
-          value={productoId}
-          onChange={(e) => setProductoId(e.target.value)}
-          required
-        />
-      </div>
+        <div className="inputLabel">
+          <label>ID del Producto:</label>
+          <input
+            type="number"
+            value={productoId}
+            onChange={(e) => setProductoId(e.target.value)}
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Cantidad:</label>
-        <input
-          type="number"
-          value={cantidad}
-          onChange={(e) => setCantidad(e.target.value)}
-          required
-        />
-      </div>
+        <div className="inputLabel">
+          <label>Cantidad:</label>
+          <input
+            type="number"
+            value={cantidad}
+            onChange={(e) => setCantidad(e.target.value)}
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Precio Unitario:</label>
-        <input
-          type="number"
-          value={precioUnitario}
-          onChange={(e) => setPrecioUnitario(e.target.value)}
-          required
-        />
-      </div>
+        <div className="inputLabel">
+          <label>Precio Unitario:</label>
+          <input
+            type="number"
+            value={precioUnitario}
+            onChange={(e) => setPrecioUnitario(e.target.value)}
+            required
+          />
+        </div>
 
-      <div className="form-group">
-        <label>Precio Total:</label>
-        <input
-          type="number"
-          value={precioTotal}
-          disabled
-        />
-      </div>
+        <div className="inputLabel">
+          <label>Precio Total:</label>
+          <input type="number" value={precioTotal} disabled />
+        </div>
 
-      <div className="form-group">
-        <label>Detalle:</label>
-        <textarea
-          value={detalle}
-          onChange={(e) => setDetalle(e.target.value)}
-        />
-      </div>
+        <div className="inputLabel">
+          <label>Detalle:</label>
+          <textarea
+            value={detalle}
+            onChange={(e) => setDetalle(e.target.value)}
+          />
+        </div>
 
-      <button type="submit" className="btn-submit">Crear Transacción</button>
-    </form>
-  </div>
-);
-
+        <button type="submit" className="btn-submit">
+          Crear Transacción
+        </button>
+      </form>
+    </>
+  );
 }
