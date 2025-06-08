@@ -3,79 +3,165 @@
   text-align: center;
 }
 
-.inicio {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
-  padding: 8em 4em;
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a192f;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 48px;
+  transition: transform 0.3s ease;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transform: scale(1.1);
 }
 
-.logo.net:hover {
-  filter: drop-shadow(0 0 2em #664bb3aa);
+.card h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2rem;
 }
 
-.container {
+.actions {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  gap: 2em;
-}
-
-.btnProductos{
-  background-color: #f1f1f1;
-  color: black;
-  border-radius: 8px;
-  /* border: 1px solid #bfc9d1; */
-  padding: 0.8em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-}
-.btnProductos:hover {
-  background-color: #d6ff64;
-  color: black;
-}
-
-.btnTransacciones{
-  background-color: #f1f1f1;
-  color: black;
-  border-radius: 8px;
-  /* border: 1px solid #bfc9d1; */
-  padding: 0.8em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-}
-.btnTransacciones:hover {
-  background-color: #64d6ff;
-  color: black;
-}
-
-.containerListaProductos{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  gap: 1rem;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2em;
-
-  margin-bottom: 2em;
 }
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #0a192f;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.btn.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.containerProductos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0a192f;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.containerListaProductos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+}
+
+
+.listaProductos {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.listaProductos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.listaProductos li {
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.listaProductos .nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.listaProductos .imagen img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contenedorBtn {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btnProductos {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background-color: #ffffff;
+  color: #0a192f;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnProductos:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
 
 .containerListaTransacciones{
   width: 100%;
@@ -86,39 +172,6 @@
   gap: 2em;
 
   margin-bottom: 2em;
-}
-
-.contenedorBtn {
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-
-  button {
-    width: 180px;
-  }
-}
-
-.listaProductos{
-  width: 500px;
-  padding: 1em;
-  background-color: #f9fafb;
-  border-radius: 18px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
-}
-
-.listaProductos ul {
-  list-style: none;
-  padding: 0;
-}
-
-.listaProductos ul li.nombre{
-  font-size: 1.5em;
-  font-weight: 600;
-  color: black;
-}
-
-.listaProductos ul li.imagen img {
-  height: 100px;
 }
 
 .listaTransacciones{
@@ -134,59 +187,74 @@
   padding: 0;
 }
 
+
+
 .formularioEdicion {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   display: flex;
   flex-direction: column;
-  width: 700px;
-  gap: 1.2em;
-  background-color: #f9fafb;
-  border-radius: 18px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
-  padding: 2em 2.5em;
-  transition: box-shadow 0.3s;
+  gap: 1.5rem;
 }
 
-.formularioEdicion:hover {
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
-}
-
-.inputLabel{
+.inputLabel {
   display: flex;
   flex-direction: column;
-  img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 1em;
-  }
+  gap: 0.5rem;
 }
 
-.formularioEdicion label {
-  align-items: center;
-  font-weight: 600;
-  color: black;
-  margin-bottom: 0.3em;
-  font-size: 1.5em;
-  text-align: left;
+.inputLabel label {
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-.formularioEdicion input {
-  color: #222;
-  background: #fff;
-  border-radius: 8px;
-  border: 1.5px solid #bfc9d1;
-  font-size: 1em;
-  padding: 1.2em;
-  transition: border-color 0.2s, box-shadow 0.2s;
+.inputLabel input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
   outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: background 0.3s ease;
 }
 
-.formularioEdicion input:focus {
-  border-color: #64b5f6;
-  box-shadow: 0 0 0 2px #e3f2fd;
+.inputLabel input:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.inputLabel img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.formularioEdicion button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: #38bdf8;
+  color: #0a192f;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formularioEdicion button[type="submit"]:hover {
+  background-color: #0ea5e9;
 }
 
 .crear-transaccion-container {
-  width: 600px;
+
   margin: 40px auto;
   padding: 30px;
   background-color: #fff;
@@ -203,11 +271,15 @@
   color: #333;
 }
 
-.crear-transaccion-form .form-group {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
+.crear-transaccion-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .crear-transaccion-form label {
   display: flex;
@@ -239,20 +311,24 @@
   min-height: 80px;
 }
 
-.btn-submit {
-  width: 100%;
-  padding: 12px;
-  background-color: #4a90e2;
-  color: white;
-  font-weight: bold;
+.btnVolver {
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
+  background-color: #334155;
+  color: white;
+  font-weight: 500;
+  font-size: 0.95rem;
   cursor: pointer;
+
+  display: flex;
+  align-items: start;
+  
   transition: background-color 0.3s ease;
 }
 
-.btn-submit:hover {
-  background-color: #357ab8;
+.btnVolver:hover {
+  background-color: #475569;
 }
 
 @keyframes logo-spin {
