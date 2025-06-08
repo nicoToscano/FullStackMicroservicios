@@ -308,6 +308,11 @@ h1 {
   background-color: #0ea5e9;
 }
 
+.containerBotonVolver {
+  display: flex;
+  padding: 2rem 5rem;
+}
+
 .btnVolver {
   padding: 0.5rem 1rem;
   border: none;
