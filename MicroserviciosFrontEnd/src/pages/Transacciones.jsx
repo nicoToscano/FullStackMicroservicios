@@ -12,7 +12,6 @@ export function Transacciones() {
 
       if (response.status === 200) {
         setTransacciones(data);
-
       }
     } catch (error) {
       console.error("Error en la petición:", error);
@@ -27,33 +26,36 @@ export function Transacciones() {
       <h1>Transacciones</h1>
       <div className="containerListaTransacciones">
         {transacciones?.map((transaccion) => {
-            return (
+          return (
             <div className="listaTransacciones" key={transaccion.id}>
               <ul>
-              <li className="date">
-                <strong>Fecha de transacción:</strong> {transaccion.dateOnly}
-              </li>
-              <li className="date">
-                <strong>Cantidad:</strong> {transaccion.cantidad}
-              </li>
-              <li className="date">
-                <strong>Precio total:</strong> {transaccion.precioTotal}
-              </li>
-              <li className="date">
-                <strong>Precio unitario:</strong> {transaccion.precioUnitario}
-              </li>
-              <li className="date">
-                <strong>Id del producto:</strong> {transaccion.productoId}
-              </li>
-              <li className="date">
-                <strong>Tipo de transacción:</strong> {transaccion.tipoDeTransaccion}
-              </li>
-              <li className="date">
-                <strong>Detalle:</strong> {transaccion.detalle}
-              </li>
+                <li className="date">
+                  <strong>Fecha de transacción:</strong> {transaccion.dateOnly}
+                </li>
+                <li className="date">
+                  <strong>Cantidad:</strong> {transaccion.cantidad}
+                </li>
+                <li className="date">
+                  <strong>Precio total:</strong> {transaccion.precioTotal}
+                </li>
+                <li className="date">
+                  <strong>Precio unitario:</strong> {transaccion.precioUnitario}
+                </li>
+              </ul>
+              <ul>
+                <li className="date">
+                  <strong>Id del producto:</strong> {transaccion.productoId}
+                </li>
+                <li className="date">
+                  <strong>Tipo de transacción:</strong>{" "}
+                  {transaccion.tipoDeTransaccion}
+                </li>
+                <li className="date">
+                  <strong>Detalle:</strong> {transaccion.detalle}
+                </li>
               </ul>
             </div>
-            );
+          );
         })}
       </div>
 
