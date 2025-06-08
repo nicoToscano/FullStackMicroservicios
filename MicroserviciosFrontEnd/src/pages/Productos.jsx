@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { BotonVolver } from "../utils/BotonVolver";
 
 export function Productos() {
   const [productos, setProductos] = useState([]);
+  const navigate = useNavigate();
 
   const getProductos = async () => {
     try {
@@ -75,43 +78,54 @@ export function Productos() {
 
   return (
     <>
-      <h1>Productos</h1>
+      <BotonVolver />
+      <div className="containerProductos">
+        <h1 className="titulo">Productos</h1>
 
-      <div className="containerListaProductos">
-        {productos?.map((producto) => {
-          return (
-            <div className="listaProductos" key={producto?.id}>
-              <ul>
-                <li className="nombre">{producto?.nombre}</li>
-                <li className="descripcion">{producto?.descripcion}</li>
-                <li className="imagen">
-                  <img src={producto?.imagen} alt="" />
-                </li>
-                <li className="categoria"><strong>Tipo: </strong>{producto?.categoria}</li>
-                <li className="precio">${producto?.precio}</li>
-                <li className="stock">Disponle: {producto?.stock}</li>
-              </ul>
+        <div className="containerListaProductos">
+          {productos?.map((producto) => {
+            return (
+              <div className="listaProductos" key={producto?.id}>
+                <ul>
+                  <li className="nombre">{producto?.nombre}</li>
+                  <li className="descripcion">{producto?.descripcion}</li>
+                  <li className="imagen">
+                    <img src={producto?.imagen} alt="" />
+                  </li>
+                  <li className="categoria">
+                    <strong>Tipo: </strong>
+                    {producto?.categoria}
+                  </li>
+                  <li className="precio">${producto?.precio}</li>
+                  <li className="stock">Disponle: {producto?.stock}</li>
+                </ul>
 
-              <div className="contenedorBtn">
-                <Link to={`/edicionproductos/${producto?.id}`}>
-                  <button className="btn">Editar</button>
-                </Link>
+                <div className="contenedorBtn">
+                  <button
+                    className="btnProductos"
+                    onClick={() =>
+                      navigate(`/edicionproductos/${producto?.id}`)
+                    }
+                  >
+                    Editar
+                  </button>
 
-                <button
-                  className="btn"
-                  onClick={() => eliminarProducto(producto?.id)}
-                >
-                  Eliminar
-                </button>
+                  <button
+                    className="btnProductos"
+                    onClick={() => eliminarProducto(producto?.id)}
+                  >
+                    Eliminar
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      <Link to="/creacionproductos">
-        <button className="btn">Crear producto</button>
-      </Link>
+        <Link to="/creacionproductos">
+          <button className="btnProductos">Crear producto</button>
+        </Link>
+      </div>
     </>
   );
 }
